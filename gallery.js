@@ -26,7 +26,17 @@ function galleryListMarkupCreate(images) {
 
 const imgMarkupCreate = galleryListMarkupCreate(images);
 
-galleryConteiner.insertAdjacentHTML('beforeend',imgMarkupCreate)
-//const galleryList = document.querySelector(".js-gallery");
+galleryConteiner.insertAdjacentHTML('beforeend', imgMarkupCreate);
 
-//galleryList.insertAdjacentHTML("beforeend", onGalleryListMarkupCreate);
+
+galleryConteiner.addEventListener('click', onGalleryConteinerClick)
+
+function onGalleryConteinerClick(evt) {
+  evt.preventDefault();
+  const isSwathEl = evt.target.classList.contains("gallery__image");
+   
+  if (!isSwathEl) {
+    return;
+  }
+ 
+}
